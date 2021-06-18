@@ -3,10 +3,9 @@
 #include <stdio.h>
 
 /**
- * main - logic
- *
- * Result: 0
- *
+* main - logic
+* Result: 0
+*
 */
 int main(void)
 {
