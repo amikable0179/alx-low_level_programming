@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
-* main - logic
+* main - logicif true prints string
 * Result: 0
 *
 */
