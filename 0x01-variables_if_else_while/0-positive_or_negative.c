@@ -5,9 +5,9 @@
 
 /**
  * main - logic
- * betty style doc for function main goes there
  *
  * Result: 0
+ *
 */
 int main(void)
 {
