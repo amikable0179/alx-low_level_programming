@@ -6,8 +6,10 @@
 * return: 0 success
 */
 void print_alphabet(void)
+/*REPLACED globaldic*/
 {
 	int letter = 'a';
+
 	while (letter <= 'z')
 	{
 	_putchar(letter);
