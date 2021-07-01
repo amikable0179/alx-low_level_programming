@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* strcat - Concatenates the string pointed to by @src, including the terminating
+* _strcat - Concatenates the string pointed to by @src, including the terminating
 * null byte, to the end of the string pointed to by @dest.
 * @dest: A pointer to the string to be concantenated.
 * @src: the source string to be concantenated.
@@ -10,5 +10,17 @@
 
 char *_strcat(char *dest, char *src)
 {
-	_strcat(dest, src);
+char *origin = dest;
+
+while (*dest != '\0')
+	dest++;
+
+while (*src != '\0')
+{
+	*dest = *src;
+	dest++;
+	src++;
+}
+*dest = '\0';
+return (origin);
 }
