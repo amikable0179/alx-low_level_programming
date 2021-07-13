@@ -1,43 +1,42 @@
-include "holberton.h"
-/**
- * argstostr - prints args
- * @ac: takes in width of grid
- * @av: height of grid
- * Return: the args one line at a time
- */
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 
+/**
+ * argstostr - function that concatenates all the arguments of your program
+ * @ac: arguments number
+ * @av: argument variables
+ * Return: Always 0.
+ */
 char *argstostr(int ac, char **av)
 {
-	char *str;
-	int count = 0, a = 0, b = 0, c = 0;
+	char *s;
+	int a, b, c, d;
 
-	if (ac == 0 || av == NULL)
+	if (ac == 0)
 		return (NULL);
-	while (a < ac)
+	if (av == 0)
+		return (NULL);
+	a = 0;
+	for (b = 0; b < ac; b++)
 	{
-		b = 0;
-		while (av[a][b] != '\0')
-		{
-			count++;
-			b++;
-		}
+		for (c = 0; av[b][c] != '\0'; c++)
+			a++;
 		a++;
 	}
-	count = count + ac + 1;
-	str = malloc(sizeof(char) * count);
-	if (str == NULL)
-	{
+	a++;
+	s = malloc(a * sizeof(char));
+	if (s == 0)
 		return (NULL);
-	}
-	for (a = 0; a < ac; a++)
+	d = 0;
+	for (b = 0; b < ac; b++)
 	{
-		for (b = 0; av[a][b] != '\0'; b++)
+		for (c = 0; av[b][c] != '\0'; c++)
 		{
-			str[c] = av[a][b];
-			c++;
+			s[d++] = av[b][c];
 		}
-		str[c] = '\n';
-		c++;
+		s[d++] = '\n';
 	}
-	return (str);
+	s[d] = '\0';
+	return (s);
 }
