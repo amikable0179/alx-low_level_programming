@@ -1,20 +1,20 @@
-#include <stdio.h>
 #include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#define STATUS_ERROR_98 98
 /**
- * malloc_checked - allocate memory with malloc
- * @b: size bytes
- *
- * Return: pointer new allocated memory
- * If fails, exit value of 98
+ * malloc_checked - Entry point
+ * @b: unsigned int size of malloc
+ * Return: Always 0 (Success)
  */
 void *malloc_checked(unsigned int b)
 {
-	void *ptr;
+	void *pointer_checked;
 
-	ptr = malloc(b);
-	if (ptr == NULL)
-		exit(98);
-	return (ptr);
+	pointer_checked = malloc(b);
+
+	if (pointer_checked == NULL)
+		exit(STATUS_ERROR_98);
+
+	return (pointer_checked);
 }
